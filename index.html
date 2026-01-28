@@ -70,10 +70,44 @@
   </nav>
   <div>
     <h2 style="text-align: center;">Моя любимая игра</h2>
-    <img src="https://img.itch.zone/aW1nLzI1MTUxMDU1LnBuZw==/original/Az4Doj.png" alt="BABULYA">
+    <div style="display: flex; justify-content: space-between; align-items: center; gap: 36px;">
+      <img style="border-radius: 16px;" src="https://img.itch.zone/aW1nLzI1MTUxMDU1LnBuZw==/original/Az4Doj.png" alt="BABULYA">
+      <div>
+        <div style="font-size: 20px;">Если я не запущу эту игру через <span id="timer" style="font-weight: 700;">00:00:00</span>, то отправлюсь на СВО</div>
+      </div>
+    </div>
   </div>
 
+  <script>
+    // Устанавливаем конкретную дату и время окончания
+    const endTime = new Date('2026-01-29T02:30:00').getTime();
 
+    function updateTimer() {
+        const now = new Date().getTime();
+        const timeLeft = endTime - now;
+
+        if (timeLeft <= 0) {
+            document.getElementById('timer').textContent = '00:00:00';
+            clearInterval(timerInterval);
+            console.log('Время вышло!');
+            return;
+        }
+
+        // Вычисляем часы, минуты и секунды
+        const hours = Math.floor(timeLeft / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+        // Форматируем с ведущими нулями
+        const display = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+
+        document.getElementById('timer').textContent = display;
+    }
+
+    // Запускаем таймер
+    const timerInterval = setInterval(updateTimer, 1000);
+    updateTimer(); // Первый вызов сразу
+  </script>
 
 </body>
 </html>
