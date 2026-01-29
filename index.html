@@ -1,74 +1,43 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-  <title>imbecile249</title>
-  <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
-  <link rel="shortcut icon" href="favicon/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
-  <link rel="manifest" href="favicon/site.webmanifest" />
-  <link rel="stylesheet" href="css/249.css">
-</head>
-<body>
-
-  <h1>Egorka249</h1>
-  <img src="https://ltdfoto.ru/images/2026/01/28/d572de771a723a660fa5b73355f1d903.jpg" alt="d572de771a723a660fa5b73355f1d903.jpg" border="0" />
-  <h3>IT developer</h3>
-  <p>МЕНЯ БЬЕТ МАМА</p>
-  <p>❤️Я люблю❤️:</p>
-  <ul class="highlight-text">
-    <li>аниме</li>
-    <li>боль</li>
-    <li>терпеть</li>
-  </ul>
-  <audio controls>
-    <source src="music/serenity - VIP Kiss .mp3" type="audio/mpeg">
-  </audio>
-  <nav>
-  <a href="https://www.youtube.com/watch?v=0Ya9dqq13BM&list=LL&index=2">Проекты</a>
-  </nav>
-  <div>
-    <h2 style="text-align: center;">Моя любимая игра</h2>
-    <div style="display: flex; justify-content: space-between; align-items: center; gap: 36px;">
-      <img style="border-radius: 16px;" src="/img/babulya.png" alt="BABULYA">
-      <div>
-        <div style="font-size: 20px;">Если я не запущу эту игру через <span id="timer" style="font-weight: 700;">00:00:00</span>, то отправлюсь на СВО</div>
+  <head>
+    <title>imbecile249</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+    <link rel="shortcut icon" href="favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicon/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="favicon/site.webmanifest" />
+    <link rel="stylesheet" href="css/249.css" />
+  </head>
+  <body>
+    <h1>Egorka249</h1>
+    <img
+      src="https://ltdfoto.ru/images/2026/01/28/d572de771a723a660fa5b73355f1d903.jpg"
+      alt="d572de771a723a660fa5b73355f1d903.jpg"/>
+    <h3>IT developer</h3>
+    <div class="hui">
+      <div><p>МЕНЯ БЬЕТ МАМА</p></div>
+      <div class="container">
+        <p>❤️Я люблю❤️:</p>
+        <ul class="highlight-text">
+          <li>аниме</li>
+          <li>боль</li>
+          <li>терпеть</li>
+        </ul>
       </div>
+      <audio controls>
+        <source src="music/serenity - VIP Kiss .mp3" type="audio/mpeg" />
+      </audio>
+      <a href="https://www.youtube.com/watch?v=0Ya9dqq13BM&list=LL&index=2">Проекты</a>
     </div>
-  </div>
-
-  <script>
-    // Устанавливаем конкретную дату и время окончания
-    const endTime = new Date('2026-01-29T02:30:00').getTime();
-
-    function updateTimer() {
-        const now = new Date().getTime();
-        const timeLeft = endTime - now;
-
-        if (timeLeft <= 0) {
-            document.getElementById('timer').textContent = '00:00:00';
-            clearInterval(timerInterval);
-            console.log('Время вышло!');
-            return;
-        }
-
-        // Вычисляем часы, минуты и секунды
-        const hours = Math.floor(timeLeft / (1000 * 60 * 60));
-        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-        // Форматируем с ведущими нулями
-        const display = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-
-        document.getElementById('timer').textContent = display;
-    }
-
-    // Запускаем таймер
-    const timerInterval = setInterval(updateTimer, 1000);
-    updateTimer(); // Первый вызов сразу
-  </script>
-
-</body>
+  </body>
 </html>
-
-
