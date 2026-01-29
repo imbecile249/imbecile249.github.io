@@ -17,37 +17,6 @@
     />
     <link rel="manifest" href="favicon/site.webmanifest" />
     <link rel="stylesheet" href="css/249.css" />
-    <script>
-      const audio = document.getElementById("track");
-      const btn = document.getElementById("playPauseBtn");
-      const progressBar = document.getElementById("progressBar");
-      const container = document.getElementById("progressContainer");
-
-      // 1. Кнопка Play/Pause
-      btn.addEventListener("click", () => {
-        if (audio.paused) {
-          audio.play();
-          btn.textContent = "Pause";
-        } else {
-          audio.pause();
-          btn.textContent = "Play";
-        }
-      });
-
-      // 2. Обновление полоски прогресса
-      audio.addEventListener("timeupdate", () => {
-        const percent = (audio.currentTime / audio.duration) * 100;
-        progressBar.style.width = percent + "%";
-      });
-
-      // 3. Перемотка кликом по полоске
-      container.addEventListener("click", (e) => {
-        const width = container.clientWidth;
-        const clickX = e.offsetX;
-        const duration = audio.duration;
-        audio.currentTime = (clickX / width) * duration;
-      });
-    </script>
   </head>
   <body>
     <h1>Egorka249</h1>
@@ -67,12 +36,12 @@
         </ul>
       </div>
       <audio id="track" src="music/serenity - VIP Kiss .mp3"></audio>
-
       <div class="player">
         <button id="playPauseBtn" class="play-btn">►</button>
         <div class="progress-container" id="progressContainer">
           <div class="progress-bar" id="progressBar"></div>
         </div>
+       <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.1">
       </div>
 
       <a
@@ -80,5 +49,42 @@
         href="https://www.youtube.com/watch?v=0Ya9dqq13BM&list=LL&index=2"
         >Проекты</a>
     </div>
+
+    <script>
+      const audio = document.getElementById("track");
+      const btn = document.getElementById("playPauseBtn");
+      const progressBar = document.getElementById("progressBar");
+      const container = document.getElementById("progressContainer");
+
+      // 1. Кнопка Play/Pause
+      btn.addEventListener("click", () => {
+        if (audio.paused) {
+          audio.play();
+          btn.textContent = "❚❚";
+        } else {
+          audio.pause();
+          btn.textContent = "►";
+        }
+      });
+
+      // 2. Обновление полоски прогресса
+      audio.addEventListener("timeupdate", () => {
+        const percent = (audio.currentTime / audio.duration) * 100;
+        progressBar.style.width = percent + "%";
+      });
+
+      // 3. Перемотка кликом по полоске
+      container.addEventListener("click", (e) => {
+        const width = container.clientWidth;
+        const clickX = e.offsetX;
+        const duration = audio.duration;
+        audio.currentTime = (clickX / width) * duration;
+      });
+      const volumeSlider = document.getElementById("volumeSlider");
+      audio.volume = volumeSlider.value;
+      volumeSlider.addEventListener('input', () => {
+        audio.volume = volumeSlider.value;
+      });
+    </script>
   </body>
 </html>
