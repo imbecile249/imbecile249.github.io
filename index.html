@@ -19,12 +19,12 @@
     <link rel="stylesheet" href="css/249.css" />
   </head>
   <body>
-    <h1>Egorka249</h1>
     <img
       src="https://ltdfoto.ru/images/2026/01/28/d572de771a723a660fa5b73355f1d903.jpg"
       alt="d572de771a723a660fa5b73355f1d903.jpg"
     />
-    <h3>WEB developer</h3>
+    <h1>Egorka249</h1>
+    <h3>Web Developer</h3>
     <div class="cvr">
       <p>HTML,CSS,Python</p>
       <div class="container">
@@ -43,11 +43,13 @@
         </div>
        <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.1">
       </div>
-
-      <a
-        target="blank"
-        href="https://www.youtube.com/watch?v=0Ya9dqq13BM&list=LL&index=2"
-        >Проекты</a>
+      <ul>
+        <li><a target="blank" href="index2.html">Важное</a></li>
+        <li><a target="blank"
+          href="https://www.youtube.com/watch?v=0Ya9dqq13BM&list=LL&index=2"
+          >Проекты</a></li>
+      </ul>
+        <a target="blank" href="https://t.me/cvrxuio">Telegram</a>
     </div>
 
     <script>
@@ -83,7 +85,7 @@
       const volumeSlider = document.getElementById("volumeSlider");
       audio.volume = volumeSlider.value;
       volumeSlider.addEventListener('input', () => {
-        audio.volume = volumeSlider.value;
+      audio.volume = volumeSlider.value;
       });
     </script>
   </body>
