@@ -86,12 +86,15 @@ li {
 }
 .contact-card {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    gap: 0;
     background-color: #ffffff;
     padding: 15px 20px;
     border-radius: 12px;
     transition: transform 0.2s ease-in-out;
+    text-decoration: none;
+    color: inherit;
 }
 .contact-card:hover {
     transform: translateY(-5px); 
@@ -104,7 +107,10 @@ li {
 .contact-card i {
     font-size: 24px;
     margin-right: 15px; /* Отступ между иконкой и текстом */
-    color: #0088cc; /* Фирменный цвет Telegram */
+}
+
+.contact-card i.fa-telegram-plane {
+    color: #333; /* чёрно-белый */
 }
 
 .contact-card i.fa-github {
@@ -140,27 +146,50 @@ li {
 .progress-bar {
   width: 0%; /* Будет меняться через JS */
   height: 100%;
-  background: #5e5e5e;
+  background: #fff281; /* как у кнопки плеера */
   border-radius: 4px;
 }
-input[type="range"]::-webkit-slider-thumb {
-  /* Для Chrome, Safari, Opera */
-  -webkit-appearance: none; /* Сбрасываем стандартный вид */
+/* Слайдер громкости плеера — сброс стандартного вида */
+.player input[type="range"] {
+  -webkit-appearance: none;
   appearance: none;
-  width: 15px; /* Размер бегунка */
-  height: 15px;
-  background: #f5e97d; /* Ваш цвет */
-  cursor: pointer;
-  border-radius: 50%; /* Делает его круглым */
+  width: 80px;
+  height: 6px;
+  background: transparent;
 }
-
-input[type="range"]::-moz-range-thumb {
-  /* Для Firefox */
-  width: 15px;
-  height: 15px;
-  background: #fff56c; /* Ваш цвет */
+.player input[type="range"]::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  background: #444;
+  border-radius: 3px;
+}
+.player input[type="range"]::-moz-range-track {
+  height: 6px;
+  background: #444;
+  border-radius: 3px;
+}
+/* Ползунок — цвет кнопки плеера #fff281 */
+.player input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #fff281;
   cursor: pointer;
   border-radius: 50%;
+  margin-top: -5px;
+  border: none;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
+}
+.player input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background: #fff281;
+  cursor: pointer;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
 }
 
 .gallery {
