@@ -1,19 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 @keyframes open {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0); 
-    }
+  from {
+    opacity: 0;
+    transform: translateY(50px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-  body {
-      animation: open 1.2s ease-out;
-  }
+body {
+  animation: open 1.2s ease-out;
+}
 
 html {
   font-family: "Montserrat", sans-serif;
@@ -21,11 +21,13 @@ html {
   font-style: normal;
 }
 body {
-  text-align:center;
-   line-height: 1.5;
-  background-image: linear-gradient(45deg, #FFE4B5, #696969);
+  background-size: cover;
+  min-height: 100vh;
+  text-align: center;
+  line-height: 1.5;
+  background: linear-gradient(45deg, #ffe4b5, #696969);
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   align-items: center;
   color: #fff;
 }
@@ -49,7 +51,7 @@ a {
   text-decoration: none;
 }
 a:hover {
-  color:#494949;
+  color: #494949;
 }
 .container {
   background: #ffffff;
@@ -58,18 +60,23 @@ a:hover {
 }
 .cvr {
   align-items: center;
- display:flex;
- flex-direction: column;
- gap: 20px;
- list-style-type: none;
- color: rgb(37, 37, 37);
- font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  list-style-type: none;
+  color: rgb(37, 37, 37);
+  font-weight: 600;
 }
 li {
   display: inline-block;
   margin-right: 25px;
 }
-
+.contact-block {
+  display: flex;
+  flex-direction: column 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+}
 
 .player {
   display: flex;
@@ -102,17 +109,19 @@ li {
   background: #5e5e5e;
   border-radius: 4px;
 }
-input[type="range"]::-webkit-slider-thumb { /* Для Chrome, Safari, Opera */
+input[type="range"]::-webkit-slider-thumb {
+  /* Для Chrome, Safari, Opera */
   -webkit-appearance: none; /* Сбрасываем стандартный вид */
   appearance: none;
-  width: 15px;      /* Размер бегунка */
+  width: 15px; /* Размер бегунка */
   height: 15px;
   background: #f5e97d; /* Ваш цвет */
   cursor: pointer;
   border-radius: 50%; /* Делает его круглым */
 }
 
-input[type="range"]::-moz-range-thumb { /* Для Firefox */
+input[type="range"]::-moz-range-thumb {
+  /* Для Firefox */
   width: 15px;
   height: 15px;
   background: #fff56c; /* Ваш цвет */
@@ -120,23 +129,21 @@ input[type="range"]::-moz-range-thumb { /* Для Firefox */
   border-radius: 50%;
 }
 
-
-
 .gallery {
-    display:block;
-    gap: 40px;
-    padding: 20px;
+  display: block;
+  gap: 40px;
+  padding: 20px;
 }
 
 .gallery-item img {
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
-    border-radius: 10px; /* Закругленные углы */
-    transition: transform 0.3s ease; /* Для плавной анимации */
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 10px; /* Закругленные углы */
+  transition: transform 0.3s ease; /* Для плавной анимации */
 }
 
 .gallery-item img:hover {
-    transform: scale(1.05);
-    cursor: pointer;
+  transform: scale(1.05);
+  cursor: pointer;
 }
