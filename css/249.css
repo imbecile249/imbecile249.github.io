@@ -153,6 +153,14 @@ li {
   padding: 8px 15px;
   border-radius: 5px;
   cursor: pointer;
+  width: 46px;
+  height: 36px;
+  box-sizing: border-box;
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 .progress-container {
   width: 200px;

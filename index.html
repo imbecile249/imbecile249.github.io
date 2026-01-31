@@ -35,7 +35,7 @@
       </div>
       <audio id="track" src="music/serenity - VIP Kiss .mp3"></audio>
       <div class="player">
-        <button id="playPauseBtn" class="play-btn">►</button>
+        <button id="playPauseBtn" class="play-btn">▶</button>
         <div class="progress-container" id="progressContainer">
           <div class="progress-bar" id="progressBar"></div>
         </div>
@@ -60,10 +60,10 @@
       btn.addEventListener("click", () => {
         if (audio.paused) {
           audio.play();
-          btn.textContent = "❚❚";
+          btn.textContent = "| |";
         } else {
           audio.pause();
-          btn.textContent = "►";
+          btn.textContent = "▶";
         }
       });
 
