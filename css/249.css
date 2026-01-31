@@ -91,6 +91,14 @@ li {
   gap: 20px;
   padding: 30px;
 }
+.contact-card-wrap {
+  padding-top: 5px;
+  margin-top: -5px;
+}
+.contact-card-center {
+  grid-column: 1 / -1;
+  justify-self: center;
+}
 .contact-card {
     display: flex;
     justify-content: flex-start;
@@ -103,10 +111,6 @@ li {
     text-decoration: none;
     color: inherit;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-}
-.contact-card-center {
-  grid-column: 1 / -1;
-  justify-self: center;
 }
 .contact-card:hover {
     transform: translateY(-5px);
