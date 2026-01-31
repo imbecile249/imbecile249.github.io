@@ -84,29 +84,34 @@ li {
 }
 
 
-
-/*.disf {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  background-image: url("https://i.pinimg.com/736x/f0/3d/e4/f03de42a75693aadaae8c6f5bee96340.jpg");
-  background-size: cover;
+.disf {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: #272727;
   border-radius: 10px;
-  background-position: center;
-  gap: 20px 50px;
+  gap: 20px;
   margin: 50px;
-  padding: 200px;
+  padding: 20px;
+  height: 100vh;
+  width: 90vh;
 }
 .kib {
- font-size: 20px; 
+align-self: center;
+ font-size: 50px; 
  font-weight:500;
- background-color: #ffffff;
+ background-color: #ffafff;
  padding: 0px 5px;
  border-radius: 10px;
-}*/
-
-
-
-
+}
+.shir{
+  font-size: 50px; 
+  font-weight:500;
+  background-color: #ff9f9f;
+  padding: 0px 5px;
+  border-radius: 10px; 
+}
 
 
 .contact-block {
@@ -157,6 +162,7 @@ li {
 .contact-card i.fa-github {
     color: #333; 
 }
+
 
 
 .player {
