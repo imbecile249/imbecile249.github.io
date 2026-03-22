@@ -21,19 +21,60 @@
   <body>
     <h1><a href="index.html">Вернуться на главную</a></h1>
     <section class="gallery">
-      <div class="gallery-item"><img src="img\2025-10-04_21.39.37.png"></div>
-       <div class="gallery-item"><img src="img\2025-09-29_17.05.34.png"></div>
-       <div class="gallery-item"><img src="img\2025-10-01_00.24.38.png"></div>
-       <div class="gallery-item"><img src="img\2025-10-01_14.50.09.png"></div>
-       <div class="gallery-item"><img src="img\2025-09-20_18.31.46.png"></div>
-       <div class="gallery-item"><img src="img\2025-10-05_06.08.46.png"></div>
-       <div class="gallery-item"><img src="img\2025-10-05_22.19.56.png"></div>
-       <div class="gallery-item"><img src="img\2025-10-10_23.48.55.png"></div>
-       <div class="gallery-item"><img src="img\2025-10-11_16.55.38.png"></div>
-       <div class="gallery-item"><img src="img\2025-10-19_01.12.30.png"></div>
-       <div class="gallery-item"><img src="img\2025-10-31_15.20.40.png"></div>
-       <div class="gallery-item"><img src="img\2025-11-01_05.20.55.png"></div>
-       <div class="gallery-item"><img src="img\2025-11-01_08.18.11.png"></div>
+      <div class="gallery-item"><img src="img\2025-10-04_21.39.37.png" alt=""></div>
+       <div class="gallery-item"><img src="img\2025-09-29_17.05.34.png" alt=""></div>
+       <div class="gallery-item"><img src="img\2025-10-01_00.24.38.png" alt=""></div>
+       <div class="gallery-item"><img src="img\2025-10-01_14.50.09.png" alt=""></div>
+       <div class="gallery-item"><img src="img\2025-09-20_18.31.46.png" alt=""></div>
+       <div class="gallery-item"><img src="img\2025-10-05_06.08.46.png" alt=""></div>
+       <div class="gallery-item"><img src="img\2025-10-05_22.19.56.png" alt=""></div>
+       <div class="gallery-item"><img src="img\2025-10-10_23.48.55.png" alt=""></div>
+       <div class="gallery-item"><img src="img\2025-10-11_16.55.38.png" alt=""></div>
+       <div class="gallery-item"><img src="img\2025-10-19_01.12.30.png" alt=""></div>
+       <div class="gallery-item"><img src="img\2025-10-31_15.20.40.png" alt=""></div>
+       <div class="gallery-item"><img src="img\2025-11-01_05.20.55.png" alt=""></div>
+       <div class="gallery-item"><img src="img\2025-11-01_08.18.11.png" alt=""></div>
     </section>
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+      <button type="button" class="lightbox-close" aria-label="Закрыть">&times;</button>
+      <img class="lightbox-img" src="" alt="">
+    </div>
+    <script>
+      (function () {
+        var root = document.getElementById("lightbox");
+        var full = root.querySelector(".lightbox-img");
+        var btn = root.querySelector(".lightbox-close");
+
+        function open(src, alt) {
+          full.src = src;
+          full.alt = alt || "";
+          root.classList.add("is-open");
+          root.setAttribute("aria-hidden", "false");
+          document.body.style.overflow = "hidden";
+        }
+
+        function close() {
+          root.classList.remove("is-open");
+          root.setAttribute("aria-hidden", "true");
+          full.removeAttribute("src");
+          full.alt = "";
+          document.body.style.overflow = "";
+        }
+
+        document.querySelector(".gallery").addEventListener("click", function (e) {
+          var t = e.target;
+          if (t.tagName !== "IMG") return;
+          open(t.currentSrc || t.src, t.alt);
+        });
+
+        btn.addEventListener("click", close);
+        root.addEventListener("click", function (e) {
+          if (e.target === root) close();
+        });
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" && root.classList.contains("is-open")) close();
+        });
+      })();
+    </script>
   </body>
 </html>
