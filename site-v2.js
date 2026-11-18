@@ -43,6 +43,7 @@ if (lightbox && typeof lightbox.showModal === "function") {
   let currentShot = 0;
   let zoom = minZoom;
   let drag = null;
+  let swipeStart = null;
 
   function setZoom(value, x = viewport.clientWidth / 2, y = viewport.clientHeight / 2) {
     const nextZoom = Math.min(maxZoom, Math.max(minZoom, value));
@@ -65,6 +66,7 @@ if (lightbox && typeof lightbox.showModal === "function") {
   }
 
   function showShot(index) {
+    swipeStart = null;
     setZoom(minZoom);
     currentShot = (index + shots.length) % shots.length;
     const shot = shots[currentShot];
@@ -88,6 +90,31 @@ if (lightbox && typeof lightbox.showModal === "function") {
   zoomOut.addEventListener("click", () => setZoom(zoom - zoomStep));
   zoomReset.addEventListener("click", () => setZoom(minZoom));
   zoomIn.addEventListener("click", () => setZoom(zoom + zoomStep));
+
+  viewport.addEventListener("touchstart", (event) => {
+    swipeStart = null;
+    if (zoom !== minZoom || event.touches.length !== 1) return;
+    const touch = event.touches[0];
+    swipeStart = { id: touch.identifier, x: touch.clientX, y: touch.clientY };
+  }, { passive: true });
+
+  viewport.addEventListener("touchend", (event) => {
+    const start = swipeStart;
+    swipeStart = null;
+    if (!start || zoom !== minZoom || event.touches.length !== 0) return;
+
+    const touch = Array.from(event.changedTouches).find((item) => item.identifier === start.id);
+    if (!touch) return;
+    const deltaX = touch.clientX - start.x;
+    const deltaY = touch.clientY - start.y;
+    if (Math.abs(deltaX) < 48 || Math.abs(deltaX) < Math.abs(deltaY) * 1.5) return;
+
+    showShot(currentShot + (deltaX < 0 ? 1 : -1));
+  }, { passive: true });
+
+  viewport.addEventListener("touchcancel", () => {
+    swipeStart = null;
+  }, { passive: true });
 
   viewport.addEventListener("wheel", (event) => {
     if (event.ctrlKey || event.shiftKey || event.deltaY === 0) return;
