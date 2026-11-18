@@ -1,124 +1,102 @@
 <!doctype html>
 <html lang="ru">
-  <head>
-    <title>imbecile249</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png" />
-    <link rel="icon" href="favicon/favicon.ico" sizes="48x48" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="favicon/apple-touch-icon.png"
-    />
-    <link rel="manifest" href="favicon/site.webmanifest" />
-    <link rel="stylesheet" href="css/249.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  </head>
-  <body>
-    <img class="avatar"
-      src="img/d6984bb6328a8c5a9cd26d87ba13b374.jpg"/>
-    <h1>Imbecile249</h1>
-    <h2>Web Developer</h2>
-    <div class="cvr">
-      <p>HTML,CSS,Python</p>
-      <audio id="track" src="music/Piena and MC Batya - Sad waltz  (1).mp3"></audio>
-      <div class="player">
-        <button id="playPauseBtn" class="play-btn">▶</button>
-        <div class="progress-container" id="progressContainer">
-          <div class="progress-bar" id="progressBar"></div>
-        </div>
-       <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.1">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#100d15">
+  <meta name="description" content="imbecile249. Мод AlcoVanish для Minecraft, игровые альбомы и ссылки.">
+  <title>imbecile249</title>
+  <link rel="icon" href="favicon/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="favicon/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="favicon/favicon-16x16.png" sizes="16x16">
+  <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png" sizes="180x180">
+  <link rel="manifest" href="favicon/site.webmanifest">
+  <link rel="stylesheet" href="css/site-v2.css">
+  <script src="site-v2.js" defer></script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">К содержимому</a>
+  <main class="shell" id="main">
+    <section class="hero" id="profile" aria-labelledby="profile-title">
+      <div class="hero-art" aria-hidden="true">
+        <img src="img/profile-voxel-cover.webp" width="1536" height="1024" alt="" fetchpriority="high">
       </div>
+      <div class="hero-copy">
+        <img class="avatar" src="img/profile-anime-avatar.png" width="80" height="80" alt="Аватар imbecile249">
+        <h1 id="profile-title">imbecile<span>249</span></h1>
+        <div class="hero-contacts" id="contacts" aria-label="Связь со мной">
+          <div class="discord-contact">
+            <span class="discord-name"><img class="social-icon" src="img/social/discord.svg" width="16" height="16" alt=""><strong>Discord</strong> <span id="discord-handle">imbecile249</span></span>
+            <button class="copy-button" id="discord-copy" type="button" hidden>Копировать</button>
+          </div>
+          <span class="sr-only" id="discord-status" role="status"></span>
+          <div class="social-links">
+            <a href="https://github.com/imbecile249" target="_blank" rel="noopener"><img class="social-icon" src="img/social/github.svg" width="16" height="16" alt="">GitHub</a>
+            <a href="https://steamcommunity.com/profiles/76561199405034754/" target="_blank" rel="noopener"><img class="social-icon" src="img/social/steam.svg" width="16" height="16" alt="">Steam</a>
+            <a href="https://vk.com/imbecile249" target="_blank" rel="noopener"><img class="social-icon" src="img/social/vk.svg" width="16" height="16" alt="">ВКонтакте</a>
+            <a href="https://namemc.com/profile/imbecile249.1" target="_blank" rel="noopener"><img class="social-icon" src="img/social/namemc.svg" width="16" height="16" alt="">NameMC</a>
+            <a href="https://www.twitch.tv/imbecile249" target="_blank" rel="noopener"><img class="social-icon" src="img/social/twitch.svg" width="16" height="16" alt="">Twitch</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <div class="contact-block">
-        <div class="contact-card-wrap">
-          <a class="contact-card" href="https://t.me/cvrxuio" target="_blank">
-            <i class="fab fa-telegram-plane"></i>
-            <span>Telegram</span>
-          </a>
+    <div class="profile-panels">
+      <section class="about-card" id="about" aria-labelledby="about-title">
+        <h2 id="about-title">Обо мне</h2>
+        <dl class="about-facts">
+          <div><dt>Имя</dt><dd>Егор</dd></div>
+          <div><dt>Возраст</dt><dd>18 лет</dd></div>
+          <div><dt>Вес</dt><dd>55 кг</dd></div>
+          <div><dt>Город</dt><dd>Санкт-Петербург</dd></div>
+          <div><dt>День рождения</dt><dd><time datetime="05-24">24 мая</time></dd></div>
+        </dl>
+      </section>
+
+      <section class="mod-card" id="mod" aria-labelledby="mod-title">
+        <img class="mod-icon" src="img/alcovanish-icon.png" width="50" height="50" alt="" loading="lazy">
+        <div class="mod-heading">
+          <h2 id="mod-title">AlcoVanish</h2>
+          <p>Minecraft Java 26.2 · Fabric</p>
         </div>
-        <div class="contact-card-wrap">
-          <a class="contact-card" href="https://github.com/imbecile249" target="_blank">
-            <i class="fab fa-github"></i>
-            <span>GitHub</span>
-          </a>
-        </div>
-        <div class="contact-card-wrap contact-card-wrap">
-          <a class="contact-card" href="https://steamcommunity.com/profiles/76561199405034754/" target="_blank">
-            <i class="fab fa-steam"></i>
-            <span>Steam</span>
-          </a>
-        </div>
-        <div class="contact-card-wrap">
-          <a class="contact-card" href="https://vk.com/imbecile249" target="_blank">
-            <i class="fab fa-vk"></i>
-            <span>VK</span>
-          </a>
-        </div>
-      </div>
-      
-      <div><a href="index2.html">Photo</a></div>
+        <a class="mod-link" href="https://github.com/imbecile249/AlcoVanish" target="_blank" rel="noopener">
+          <img class="social-icon" src="img/social/github.svg" width="16" height="16" alt=""> Репозиторий <span aria-hidden="true">↗</span>
+        </a>
+        <ul class="mod-features">
+          <li><strong>Подсветка</strong><span>Выбор руд, подсветка сундуков и редстоуна, цветные контуры игроков и фильтры мобов.</span></li>
+          <li><strong>HUD</strong><span>Список игроков рядом, счётчик мобов и индикаторы здоровья.</span></li>
+          <li><strong>Таблички</strong><span>Наборы четырёхстрочных шаблонов с предпросмотром, импортом и экспортом.</span></li>
+        </ul>
+      </section>
     </div>
-    <script>
-      const audio = document.getElementById("track");
-      const btn = document.getElementById("playPauseBtn");
-      const progressBar = document.getElementById("progressBar");
-      const container = document.getElementById("progressContainer");
 
-      // 1. Кнопка Play/Pause
-      btn.addEventListener("click", () => {
-        if (audio.paused) {
-          audio.play();
-          btn.textContent = "| |";
-        } else {
-          audio.pause();
-          btn.textContent = "▶";
-        }
-      });
+    <section class="archive section" id="archive" aria-labelledby="archive-title">
+      <h2 id="archive-title">Игровой архив</h2>
+      <div class="album-grid">
+        <a class="album-card album-card--glad" href="archive/gladvalakasserver.html">
+          <img src="img/archive/glad-valakas-cover.webp" alt="" loading="lazy" decoding="async">
+          <div class="album-card-text">
+            <h3>Glad Valakas Server</h3>
+            <span>36 снимков</span>
+          </div>
+          <span class="album-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="album-card album-card--sakeva" href="archive/sakeva-vanilla.html">
+          <img src="img/archive/sakeva-logo.webp" alt="" loading="lazy" decoding="async">
+          <div class="album-card-text">
+            <h3>Sakeva Vanilla</h3>
+            <span>79 снимков</span>
+          </div>
+          <span class="album-arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+  </main>
 
-      // 2. Обновление полоски прогресса
-      let isSeeking = false;
-      audio.addEventListener("timeupdate", () => {
-        if (!isSeeking) {
-          const percent = (audio.currentTime / audio.duration) * 100;
-          progressBar.style.width = percent + "%";
-        }
-      });
-
-      // 3. Перемотка кликом и перетаскиванием по полоске
-      function seekToPosition(clientX) {
-        const rect = container.getBoundingClientRect();
-        const width = rect.width;
-        const x = Math.max(0, Math.min(clientX - rect.left, width));
-        const percent = (x / width) * 100;
-        progressBar.style.width = percent + "%";
-        if (audio.duration && !isNaN(audio.duration)) {
-          audio.currentTime = (x / width) * audio.duration;
-        }
-      }
-      container.addEventListener("click", (e) => seekToPosition(e.clientX));
-      let wasPlaying = false;
-      container.addEventListener("mousedown", (e) => {
-        isSeeking = true;
-        wasPlaying = !audio.paused;
-        if (wasPlaying) audio.pause();
-        seekToPosition(e.clientX);
-      });
-      document.addEventListener("mousemove", (e) => {
-        if (isSeeking) seekToPosition(e.clientX);
-      });
-      function endSeek() {
-        if (isSeeking && wasPlaying) audio.play();
-        isSeeking = false;
-      }
-      document.addEventListener("mouseup", endSeek);
-      document.addEventListener("mouseleave", endSeek);
-      const volumeSlider = document.getElementById("volumeSlider");
-      audio.volume = volumeSlider.value;
-      volumeSlider.addEventListener('input', () => {
-      audio.volume = volumeSlider.value;
-      });
-    </script>
-  </body>
-
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <span class="wordmark"><span class="accent" aria-hidden="true">✦</span> imbecile249</span>
+    </div>
+  </footer>
+</body>
 </html>
